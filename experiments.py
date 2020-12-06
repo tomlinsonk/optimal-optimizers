@@ -106,6 +106,7 @@ def compare_item_feature_models_experiment():
     with open(f'{RESULTS_DIR}/item_feature_results.pt', 'wb') as f:
         torch.save((datasets, model_classes, seeds, OPTIMIZERS.keys(), all_results), f)
 
-if __name__ == '__main__':
-   compare_item_identity_models_experiment()
 
+if __name__ == '__main__':
+    compare_item_identity_models_experiment()
+    compare_item_feature_models_experiment()
