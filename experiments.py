@@ -87,7 +87,7 @@ def compare_item_identity_models_experiment():
             all_results[args] = results
 
     with open(f'{RESULTS_DIR}/item_identity_results.pt', 'wb') as f:
-        torch.save((datasets, model_classes, seeds, OPTIMIZERS.keys(), all_results), f)
+        torch.save((datasets, model_classes, seeds, list(OPTIMIZERS.keys()), all_results), f)
 
 
 def compare_item_feature_models_experiment():
@@ -104,7 +104,7 @@ def compare_item_feature_models_experiment():
             all_results[args] = results
 
     with open(f'{RESULTS_DIR}/item_feature_results.pt', 'wb') as f:
-        torch.save((datasets, model_classes, seeds, OPTIMIZERS.keys(), all_results), f)
+        torch.save((datasets, model_classes, seeds, list(OPTIMIZERS.keys()), all_results), f)
 
 
 if __name__ == '__main__':
