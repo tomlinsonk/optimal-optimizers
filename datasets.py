@@ -54,7 +54,7 @@ class ItemIdentityDataset(Dataset, ABC):
     @classmethod
     def load_pytorch(cls):
         choice_sets, choices, person_df = cls.load()
-        choice_sets = torch.from_numpy(choice_sets)[:, :, None].long()
+        choice_sets = torch.from_numpy(choice_sets)[:, :, None].float()
         choices = torch.tensor(choices).long()
 
         if len(person_df.index) > 0:
