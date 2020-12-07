@@ -54,6 +54,8 @@ def item_identity_dataset_helper(args):
     model = Model(n_items)
     optimizer = get_optimizer(optim_name, model)
 
+    print(optimizer)
+
     results = fit(model, (choice_sets, choices), optimizer=optimizer, show_progress=False)
 
     return args, results
