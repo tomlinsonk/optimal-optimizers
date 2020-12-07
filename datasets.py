@@ -54,8 +54,8 @@ class ItemIdentityDataset(Dataset, ABC):
     @classmethod
     def load_pytorch(cls):
         choice_sets, choices, person_df = cls.load()
-        choice_sets = torch.from_numpy(choice_sets)[:, :, None]
-        choices = torch.tensor(choices)
+        choice_sets = torch.from_numpy(choice_sets)[:, :, None].long()
+        choices = torch.tensor(choices).long()
 
         if len(person_df.index) > 0:
             person_df = pd.DataFrame(preprocessing.StandardScaler().fit_transform(person_df), columns=person_df.columns, index=person_df.index)
