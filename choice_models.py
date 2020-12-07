@@ -119,6 +119,7 @@ class ItemFeatureChoiceModel(ChoiceModel, ABC):
         :return: log(choice probabilities) over every choice set
         """
 
+
 class Logit(ItemIdentityChoiceModel):
     name = 'logit'
     table_name = 'Logit'
@@ -247,20 +248,24 @@ def fit(model, data, optimizer, show_progress=True):
     for epoch in progress_bar:
         model.train()
 
-        optimizer.zero_grad()
+        def closure():
+            optimizer.zero_grad()
+            loss = model.loss(model(*data[:-1]), choices)
+            loss.backward()
+            return loss
 
-        loss = model.loss(model(*data[:-1]), choices)
-        losses.append(loss.detach().item())
-
-        loss.backward(retain_graph=None if epoch != EPOCHS - 1 else True)
+        loss = closure()
 
         with torch.no_grad():
+            losses.append(loss.detach().item())
             gradient = torch.stack([(item.grad ** 2).sum() for item in model.parameters()]).sum()
-
             if gradient.item() < 10 ** -8:
                 break
 
-        optimizer.step()
+        if type(optimizer) == torch.optim.LBFGS:
+            optimizer.step(closure)
+        else:
+            optimizer.step()
 
         if show_progress:
             progress_bar.set_description(f'Loss: {loss.item():.4f}, Grad: {gradient.item():.3e}. Epochs')
