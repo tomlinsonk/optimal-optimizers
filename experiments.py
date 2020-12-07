@@ -32,7 +32,7 @@ OPTIMIZERS = {
     'RMSprop': {'constructor': torch.optim.RMSprop, 'params': {'lr': loguniform(10**-4, 10**0), 'alpha': uniform(0.8, 0.2)}},
     'Rprop': {'constructor': torch.optim.Rprop, 'params': {'lr': loguniform(10**-4, 10**0)}},
     'SGD': {'constructor': torch.optim.SGD, 'params': {'lr': loguniform(10**-4, 10**0)}},
-    'Nesterov SGD': {'constructor': torch.optim.SGD, 'params': {'lr': loguniform(10**-4, 10**0), 'nesterov': True}},
+    'Nesterov SGD': {'constructor': torch.optim.SGD, 'params': {'lr': loguniform(10**-4, 10**0), 'momentum': loguniform(10**-5, 10**-1), 'nesterov': True}},
     'Momentum SGD': {'constructor': torch.optim.SGD, 'params': {'lr': loguniform(10**-4, 10**0), 'momentum': loguniform(10**-5, 10**-1)}},
 }
 
