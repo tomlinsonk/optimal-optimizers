@@ -1,6 +1,6 @@
 # CS 6787 Final Project: Optimal Optimizers for Learning Discrete Choice Models
 
-This repository contains code for my [CS 6787: Advanced ML Systems](https://www.cs.cornell.edu/courses/cs6787/2020fa/) final project.
+This repository contains code for my [CS 6787: Advanced ML Systems](https://www.cs.cornell.edu/courses/cs6787/2020fa/) final project. The report can be found in `report/`.
 
 ## Libraries
 - Python 3.8.5
