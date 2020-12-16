@@ -30,7 +30,7 @@ First, create a directory to hold the data (I'll refer to this directory as `dat
 which will hold processed versions of the larger datasets. Download the SFWork/SFShop data from this [Google Drive link](https://drive.google.com/file/d/15CMJ7_caeKXcXkMIRGVWSnp5M18S8T6G/view?usp=sharing).
 Place the unzipped `SF-raw/` directory in a new dirctory `data/SF/`. Download the Sushi dataset [here](http://www.kamishima.net/sushi/) (the file `sushi3-2016.zip`).
 Place the unzipped `sushi3-2016/` directory in `data/`. Finally, the [Expedia](https://www.kaggle.com/c/expedia-personalized-sort/data) and [Allstate](https://www.kaggle.com/c/allstate-purchase-prediction-challenge)
-datasets are available directly from Kaggle. Place both the `expedia-personalized-sort` and `allstate-purchase-prediction-challenge/` directories in `data/`. Finally, create a file called `config.yml` in `cs6787-final-project/` with a single line, replacing the path with yours:
+datasets are available directly from Kaggle. Place both the `expedia-personalized-sort` and `allstate-purchase-prediction-challenge/` directories in `data/`. Finally, create a file called `config.yml` in `optimal-optimizers/` with a single line, replacing the path with yours:
 
 `datadir: '/path/to/data/'`
 
