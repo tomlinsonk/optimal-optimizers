@@ -20,9 +20,10 @@ This repository contains code for my [CS 6787: Advanced ML Systems](https://www.
 The `plots/` directory containes all loss trajectory plots and the `results/` directory contains saved results from my run of the experiments.
 
 The CDM implementation was adapted from [Arjun Seshadri's CDM code](https://github.com/arjunsesh/cdm-icml), which accompanies the paper
-> Arjun Seshadri, Alex Peysakhovich, and Johan Ugander. 2019. Discovering Context Effects from Raw Choice Data. In International Conference on Machine Learning. 5660–5669.
+> Arjun Seshadri, Alex Peysakhovich, and Johan Ugander. Discovering Context Effects from Raw Choice Data. In International Conference on Machine Learning, 2019. 5660–5669.
+
 The LCL implementation was adapted from [my LCL code](https://github.com/tomlinsonk/feature-context-effects), which accompanies the preprint
-> Kiran Tomlinson and Austin R. Benson. Learning Interpretable Feature Context Effects in Discrete Choice. 2020. https://arxiv.org/abs/2009.03417.
+> Kiran Tomlinson and Austin R. Benson. Learning Interpretable Feature Context Effects in Discrete Choice. https://arxiv.org/abs/2009.03417, 2020.
 
 ## Data
 First, create a directory to hold the data (I'll refer to this directory as `data/`, but you can name it anything). Create a subdirectory of `data/` called `pickles/`,
