@@ -338,5 +338,5 @@ class Allstate(ItemFeatureDataset):
 
 
 if __name__ == '__main__':
-    Expedia.load()
-    Allstate.load()
+    choice_set_features, choice_set_lengths, choices, person_df = FeatureSushi.load_pytorch()
+    print(choice_set_features.size())
